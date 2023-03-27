@@ -38,8 +38,8 @@ Commissioned by T1g3rs65.</Description>
 
 	
       <Components>
-        <Component Subtype="SteelPlate" Count="20" />
-        <Component Subtype="Construction" Count="8" />
+        <Component Subtype="SteelPlate" Count="200" />
+        <Component Subtype="Construction" Count="80" />
         <Component Subtype="MetalGrid" Count="30" />
         <Component Subtype="LargeTube" Count="25" />
         <Component Subtype="Motor" Count="12" />
