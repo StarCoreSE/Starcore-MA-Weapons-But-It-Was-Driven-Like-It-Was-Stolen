@@ -2547,8 +2547,7 @@ Made by AutoMcD Astronautical and CriegWarfare.</Description>
                 <SubtypeId>MA_Fixed_T2</SubtypeId>
             </Id>
             <DisplayName>Fixed T2 Laser</DisplayName>
-			<Description>Single T2 laser supply. Smart firing but must be manually aimed.
-Will not target projectiles.
+			<Description>Single T2 laser diode. Limited gimble.
 Role: Battle
 Ammo: Energy
 Range: 100% to 1000m, 50% at 2500m.
@@ -2731,12 +2730,13 @@ Made by AutoMcD Astronautical, Mike_Dude.</Description>
                 <SubtypeId>MA_Fixed_T3</SubtypeId>
             </Id>
             <DisplayName>Fixed T3 Laser</DisplayName>
-			<Description>Single T3 laser supply. Smart firing but must be manually aimed.
-Will not target projectiles.
-Role: Battle
-Ammo: Energy
-Range: 100% to 1000m, 50% at 2500m.
-Made by AutoMcD Astronautical, Mike_Dude.</Description>
+			<Description>
+				Single T3 laser Diode. Limited Gimble.
+				Role: Anti-Ship, Anti-Artillery and Torpedo Point Defense
+				Ammo: Energy
+				Range: 100% to 3000m, 25% at 3500m.
+				Made by AutoMcD Astronautical, Mike_Dude.
+			</Description>
             <Icon>Textures\GUI\Icons\Cubes\MA_Fixed_T3.png</Icon>
             <CubeSize>Large</CubeSize>
             <BlockTopology>TriangleMesh</BlockTopology>
