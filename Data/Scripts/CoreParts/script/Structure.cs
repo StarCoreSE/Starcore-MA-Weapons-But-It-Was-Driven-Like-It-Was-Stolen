@@ -524,6 +524,7 @@ namespace Scripts
                     [ProtoMember(4)] internal bool EnableOverload;
                     [ProtoMember(5)] internal bool AlternateUi;
                     [ProtoMember(6)] internal bool DisableStatus;
+                    [ProtoMember(7)] internal float RateOfFireMin;
                 }
 
 
@@ -648,6 +649,7 @@ namespace Scripts
                 [ProtoMember(28)] internal double HeatModifier;
                 [ProtoMember(29)] internal bool NpcSafe;
                 [ProtoMember(30)] internal SynchronizeDef Sync;
+                [ProtoMember(31)] internal bool NoGridOrArmorScaling;
 
                 [ProtoContract]
                 public struct SynchronizeDef
@@ -1309,6 +1311,8 @@ namespace Scripts
                         [ProtoMember(21)] internal bool NoSteering;
                         [ProtoMember(22)] internal double FutureIntersectionRange;
                         [ProtoMember(23)] internal double MinTurnSpeed;
+                        [ProtoMember(24)] internal bool NoTargetApproach;
+                        [ProtoMember(25)] internal bool AltNavigation;
                     }
 
                     [ProtoContract]
@@ -1326,23 +1330,61 @@ namespace Scripts
                         {
                             Ignore,
                             Spawn,
-                            DistanceFromTarget,
+                            DistanceFromPositionC,
                             Lifetime,
                             DesiredElevation,
                             MinTravelRequired,
                             MaxTravelRequired,
                             Deadtime,
+                            DistanceToPositionC,
+                            NextTimedSpawn,
+                            RelativeLifetime,
+                            RelativeDeadtime,
+                            SinceTimedSpawn,
+                            RelativeSpawns,
+                            EnemyTargetLoss,
+                            RelativeHealthLost,
+                            HealthRemaining,
+                            DistanceFromPositionB,
+                            DistanceToPositionB,
+                            DistanceFromTarget,
                             DistanceToTarget,
+                            DistanceFromEndTrajectory,
+                            DistanceToEndTrajectory,
                         }
 
                         public enum UpRelativeTo
                         {
-                            RelativeToBlock,
-                            RelativeToGravity,
-                            TargetDirection,
-                            TargetVelocity,
-                            StoredStartDestination,
-                            StoredEndDestination,
+                            UpRelativeToBlock,
+                            UpRelativeToGravity,
+                            UpTargetDirection,
+                            UpTargetVelocity,
+                            UpStoredStartDontUse,
+                            UpStoredEndDontUse,
+                            UpStoredStartPosition,
+                            UpStoredEndPosition,
+                            UpStoredStartLocalPosition,
+                            UpStoredEndLocalPosition,
+                            UpRelativeToShooter,
+                            UpOriginDirection,
+                            UpElevationDirection,
+                        }
+
+                        public enum FwdRelativeTo
+                        {
+                            ForwardElevationDirection,
+                            ForwardRelativeToBlock,
+                            ForwardRelativeToGravity,
+                            ForwardTargetDirection,
+                            ForwardTargetVelocity,
+                            ForwardStoredStartDontUse,
+                            ForwardStoredEndDontUse,
+                            ForwardStoredStartPosition,
+                            ForwardStoredEndPosition,
+                            ForwardStoredStartLocalPosition,
+                            ForwardStoredEndLocalPosition,
+                            ForwardRelativeToShooter,
+                            ForwardOriginDirection,
                         }
 
                         public enum RelativeTo
@@ -1352,11 +1394,14 @@ namespace Scripts
                             Target,
                             Surface,
                             MidPoint,
-                            Current,
+                            PositionA,
                             Nothing,
-                            StoredStartDestination,
-                            StoredEndDestination,
-
+                            StoredStartDontUse,
+                            StoredEndDontUse,
+                            StoredStartPosition,
+                            StoredEndPosition,
+                            StoredStartLocalPosition,
+                            StoredEndLocalPosition,
                         }
 
                         public enum ConditionOperators
@@ -1372,15 +1417,31 @@ namespace Scripts
                             DoNothing,
                             EndProjectile,
                             EndProjectileOnRestart,
-                            StoreDestination,
+                            StoreDontUse,
+                            StorePositionDontUse,
+                            Refund,
+                            StorePositionA,
+                            StorePositionB,
+                            StorePositionC,
                         }
 
+                        [ProtoContract]
+                        public struct WeightedIdListDef
+                        {
+
+                            [ProtoMember(1)] public int ApproachId;
+                            [ProtoMember(2)] public Randomize Weight;
+                            [ProtoMember(3)] public double End1WeightMod;
+                            [ProtoMember(4)] public double End2WeightMod;
+                            [ProtoMember(5)] public int MaxRuns;
+                            [ProtoMember(6)] public double End3WeightMod;
+                        }
 
                         [ProtoMember(1)] internal ReInitCondition RestartCondition;
                         [ProtoMember(2)] internal Conditions StartCondition1;
                         [ProtoMember(3)] internal Conditions EndCondition1;
                         [ProtoMember(4)] internal UpRelativeTo Up;
-                        [ProtoMember(5)] internal RelativeTo Source;
+                        [ProtoMember(5)] internal RelativeTo PositionB;
                         [ProtoMember(6)] internal double AngleOffset;
                         [ProtoMember(7)] internal double Start1Value;
                         [ProtoMember(8)] internal double End1Value;
@@ -1388,14 +1449,14 @@ namespace Scripts
                         [ProtoMember(10)] internal double DesiredElevation;
                         [ProtoMember(11)] internal double AccelMulti;
                         [ProtoMember(12)] internal double SpeedCapMulti;
-                        [ProtoMember(13)] internal bool AdjustDestination;
+                        [ProtoMember(13)] internal bool AdjustPositionC;
                         [ProtoMember(14)] internal bool CanExpireOnceStarted;
                         [ProtoMember(15)] internal ParticleDef AlternateParticle;
                         [ProtoMember(16)] internal string AlternateSound;
                         [ProtoMember(17)] internal string AlternateModel;
                         [ProtoMember(18)] internal int OnRestartRevertTo;
                         [ProtoMember(19)] internal ParticleDef StartParticle;
-                        [ProtoMember(20)] internal bool AdjustSource;
+                        [ProtoMember(20)] internal bool AdjustPositionB;
                         [ProtoMember(21)] internal bool AdjustUp;
                         [ProtoMember(22)] internal bool PushLeadByTravelDistance;
                         [ProtoMember(23)] internal double TrackingDistance;
@@ -1417,10 +1478,32 @@ namespace Scripts
                         [ProtoMember(39)] internal bool NoTimedSpawns;
                         [ProtoMember(40)] internal double OffsetMaxRadius;
                         [ProtoMember(41)] internal bool ForceRestart;
-                        [ProtoMember(42)] internal RelativeTo Destination;
+                        [ProtoMember(42)] internal RelativeTo PositionC;
                         [ProtoMember(43)] internal bool DisableAvoidance;
                         [ProtoMember(44)] internal int StoredStartId;
                         [ProtoMember(45)] internal int StoredEndId;
+                        [ProtoMember(46)] internal WeightedIdListDef[] RestartList;
+                        [ProtoMember(47)] internal RelativeTo StoredStartType;
+                        [ProtoMember(48)] internal RelativeTo StoredEndType;
+                        [ProtoMember(49)] internal bool LeadRotateElevatePositionB;
+                        [ProtoMember(50)] internal bool LeadRotateElevatePositionC;
+                        [ProtoMember(51)] internal bool NoElevationLead;
+                        [ProtoMember(52)] internal bool IgnoreAntiSmart;
+                        [ProtoMember(53)] internal double HeatRefund;
+                        [ProtoMember(54)] internal Randomize AngleVariance;
+                        [ProtoMember(55)] internal bool ReloadRefund;
+                        [ProtoMember(56)] internal int ModelRotateTime;
+                        [ProtoMember(57)] internal FwdRelativeTo Forward;
+                        [ProtoMember(58)] internal bool AdjustForward;
+                        [ProtoMember(59)] internal bool ToggleIngoreVoxels;
+                        [ProtoMember(60)] internal bool SelfAvoidance;
+                        [ProtoMember(61)] internal bool TargetAvoidance;
+                        [ProtoMember(62)] internal bool SelfPhasing;
+                        [ProtoMember(63)] internal bool TrajectoryRelativeToB;
+                        [ProtoMember(64)] internal Conditions EndCondition3;
+                        [ProtoMember(65)] internal double End3Value;
+                        [ProtoMember(66)] internal bool SwapNavigationType;
+                        [ProtoMember(67)] internal bool ElevationRelativeToC;
                     }
 
                     [ProtoContract]
