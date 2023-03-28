@@ -187,9 +187,9 @@ Made by AutoMcD Astronautical, CriegWarfare, Mike_Dude.</Description>
         </Definition>	
 	
 <!-- PDX large -->
-<Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+<Definition xsi:type="MyObjectBuilder_ConveyorSorterDefinition">
             <Id>
-                <TypeId>LargeMissileTurret</TypeId>
+                <TypeId>ConveyorSorter</TypeId>
                 <SubtypeId>MA_PDX</SubtypeId>
             </Id>
             <DisplayName>T1 PDX Laser</DisplayName>
@@ -276,9 +276,9 @@ Made by AutoMcD Astronautical and CriegWarfare.</Description>
 
 
 <!-- PDX small -->
-<Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+<Definition xsi:type="MyObjectBuilder_ConveyorSorterDefinition">
             <Id>
-                <TypeId>LargeMissileTurret</TypeId>
+                <TypeId>ConveyorSorter</TypeId>
                 <SubtypeId>MA_PDX_sm</SubtypeId>
             </Id>
             <DisplayName>PDX Laser small grid</DisplayName>
@@ -645,9 +645,9 @@ Made by AutoMcD Astronautical, CriegWarfare, Mike_Dude.
 
 
 <!-- PDT large -->
-    <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+    <Definition xsi:type="MyObjectBuilder_ConveyorSorterDefinition">
       <Id>
-        <TypeId>LargeMissileTurret</TypeId>
+        <TypeId>ConveyorSorter</TypeId>
         <SubtypeId>MA_PDT</SubtypeId>
       </Id>
       <DisplayName>PDT</DisplayName>
@@ -727,9 +727,9 @@ Made by AutoMcD Astronautical.
     </Definition>
 	
 <!-- PDT small -->
-    <Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+    <Definition xsi:type="MyObjectBuilder_ConveyorSorterDefinition">
       <Id>
-        <TypeId>LargeMissileTurret</TypeId>
+        <TypeId>ConveyorSorter</TypeId>
         <SubtypeId>MA_PDT_sm</SubtypeId>
       </Id>
       <DisplayName>Point Defense Turret small grid</DisplayName>
@@ -811,9 +811,9 @@ Made by AutoMcD Astronautical.
 
 <!-- gimbals large -->
 <!-- MA_Gimbal_Laser_Armored -->
-	<Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+	<Definition xsi:type="MyObjectBuilder_ConveyorSorterDefinition">
             <Id>
-                <TypeId>LargeMissileTurret</TypeId>
+                <TypeId>ConveyorSorter</TypeId>
                 <SubtypeId>MA_Gimbal_Laser_Armored</SubtypeId>
             </Id>
             <DisplayName>T1 Gimbal Laser Armored</DisplayName>
@@ -911,9 +911,9 @@ Made by AutoMcD Astronautical.
 		
 
 <!-- MA_Gimbal_Laser_Armored_Slope -->		
-	<Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+	<Definition xsi:type="MyObjectBuilder_ConveyorSorterDefinition">
             <Id>
-                <TypeId>LargeMissileTurret</TypeId>
+                <TypeId>ConveyorSorter</TypeId>
                 <SubtypeId>MA_Gimbal_Laser_Armored_Slope</SubtypeId>
             </Id>
             <DisplayName>T1 Gimbal Laser Armored Slope</DisplayName>
@@ -1010,9 +1010,9 @@ Made by AutoMcD Astronautical.
 
 
 <!-- MA_Gimbal_Laser_Armored_Slope2 -->		
-	<Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+	<Definition xsi:type="MyObjectBuilder_ConveyorSorterDefinition">
             <Id>
-                <TypeId>LargeMissileTurret</TypeId>
+                <TypeId>ConveyorSorter</TypeId>
                 <SubtypeId>MA_Gimbal_Laser_Armored_Slope2</SubtypeId>
             </Id>
             <DisplayName>T1 Gimbal Laser Armored Slope 2</DisplayName>
@@ -1108,9 +1108,9 @@ Made by AutoMcD Astronautical.
 		
 
 <!-- MA_Gimbal_Laser_Armored_Slope45 -->
-	<Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+	<Definition xsi:type="MyObjectBuilder_ConveyorSorterDefinition">
             <Id>
-                <TypeId>LargeMissileTurret</TypeId>
+                <TypeId>ConveyorSorter</TypeId>
                 <SubtypeId>MA_Gimbal_Laser_Armored_Slope45</SubtypeId>
             </Id>
             <DisplayName>T1 Gimbal Laser Armored Slope 45</DisplayName>
@@ -1208,9 +1208,9 @@ Made by AutoMcD Astronautical.
 
 		
 <!-- MA_Gimbal_Laser -->		
-	<Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+	<Definition xsi:type="MyObjectBuilder_ConveyorSorterDefinition">
             <Id>
-                <TypeId>LargeMissileTurret</TypeId>
+                <TypeId>ConveyorSorter</TypeId>
                 <SubtypeId>MA_Gimbal_Laser</SubtypeId>
             </Id>
             <DisplayName>T1 Gimbal Laser</DisplayName>
@@ -1230,40 +1230,29 @@ Made by AutoMcD Astronautical.
 	
 	<BlockVariants>
         <BlockVariant>
-          <TypeId>LargeMissileTurret</TypeId>
+          <TypeId>ConveyorSorter</TypeId>
           <SubtypeId>MA_Gimbal_Laser</SubtypeId>
         </BlockVariant>
 		<BlockVariant>
-          <TypeId>LargeMissileTurret</TypeId>
+          <TypeId>ConveyorSorter</TypeId>
           <SubtypeId>MA_Gimbal_Laser_Armored</SubtypeId>
         </BlockVariant>
 		<BlockVariant>
-          <TypeId>LargeMissileTurret</TypeId>
+          <TypeId>ConveyorSorter</TypeId>
           <SubtypeId>MA_Gimbal_Laser_Armored_Slope</SubtypeId>
         </BlockVariant>
 		<BlockVariant>
-          <TypeId>LargeMissileTurret</TypeId>
+          <TypeId>ConveyorSorter</TypeId>
           <SubtypeId>MA_Gimbal_Laser_Armored_Slope2</SubtypeId>
         </BlockVariant>
 		<BlockVariant>
-          <TypeId>LargeMissileTurret</TypeId>
+          <TypeId>ConveyorSorter</TypeId>
           <SubtypeId>MA_Gimbal_Laser_Armored_Slope45</SubtypeId>
         </BlockVariant>	
-
 		<BlockVariant>
-          <TypeId>LargeMissileTurret</TypeId>
+          <TypeId>ConveyorSorter</TypeId>
           <SubtypeId>MA_PDX</SubtypeId>
         </BlockVariant>	
-
-
-
-
-
-
-
-
-
-
 
 		
       </BlockVariants>
@@ -1350,9 +1339,9 @@ Made by AutoMcD Astronautical.
 
 
 <!-- MA_Gimbal_Laser_T2 -->		
-	<Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+	<Definition xsi:type="MyObjectBuilder_ConveyorSorterDefinition">
             <Id>
-                <TypeId>LargeMissileTurret</TypeId>
+                <TypeId>ConveyorSorter</TypeId>
                 <SubtypeId>MA_Gimbal_Laser_T2</SubtypeId>
             </Id>
             <DisplayName>Gimbal Laser T2</DisplayName>
@@ -1447,23 +1436,23 @@ Made by AutoMcD Astronautical.
  	<BlockVariants>
 
 		 <BlockVariant>
-          <TypeId>LargeMissileTurret</TypeId>
+          <TypeId>ConveyorSorter</TypeId>
           <SubtypeId>MA_Gimbal_Laser_T2</SubtypeId>
         </BlockVariant>
 		<BlockVariant>
-          <TypeId>LargeMissileTurret</TypeId>
+          <TypeId>ConveyorSorter</TypeId>
           <SubtypeId>MA_Gimbal_Laser_T2_Armored</SubtypeId>
         </BlockVariant>
 		<BlockVariant>
-          <TypeId>LargeMissileTurret</TypeId>
+          <TypeId>ConveyorSorter</TypeId>
           <SubtypeId>MA_Gimbal_Laser_T2_Armored_Slope</SubtypeId>
         </BlockVariant>
 		<BlockVariant>
-          <TypeId>LargeMissileTurret</TypeId>
+          <TypeId>ConveyorSorter</TypeId>
           <SubtypeId>MA_Gimbal_Laser_T2_Armored_Slope2</SubtypeId>
         </BlockVariant>
 		<BlockVariant>
-          <TypeId>LargeMissileTurret</TypeId>
+          <TypeId>ConveyorSorter</TypeId>
           <SubtypeId>MA_Gimbal_Laser_T2_Armored_Slope45</SubtypeId>
         </BlockVariant>	
 
@@ -1494,9 +1483,9 @@ Made by AutoMcD Astronautical.
  </Definition>
 
 <!-- MA_Gimbal_Laser_T2_Armored -->		
-	<Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+	<Definition xsi:type="MyObjectBuilder_ConveyorSorterDefinition">
             <Id>
-                <TypeId>LargeMissileTurret</TypeId>
+                <TypeId>ConveyorSorter</TypeId>
                 <SubtypeId>MA_Gimbal_Laser_T2_Armored</SubtypeId>
             </Id>
             <DisplayName>Gimbal Laser T2 Armored</DisplayName>
@@ -1589,9 +1578,9 @@ Made by AutoMcD Astronautical.
         </Definition>
 
 <!-- MA_Gimbal_Laser_T2_Armored_Slope -->		
-	<Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+	<Definition xsi:type="MyObjectBuilder_ConveyorSorterDefinition">
             <Id>
-                <TypeId>LargeMissileTurret</TypeId>
+                <TypeId>ConveyorSorter</TypeId>
                 <SubtypeId>MA_Gimbal_Laser_T2_Armored_Slope</SubtypeId>
             </Id>
             <DisplayName>Gimbal Laser T2 Armored Slope</DisplayName>
@@ -1684,9 +1673,9 @@ Made by AutoMcD Astronautical.
         </Definition>
 
 <!-- MA_Gimbal_Laser_T2_Armored_Slope2 -->		
-	<Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+	<Definition xsi:type="MyObjectBuilder_ConveyorSorterDefinition">
             <Id>
-                <TypeId>LargeMissileTurret</TypeId>
+                <TypeId>ConveyorSorter</TypeId>
                 <SubtypeId>MA_Gimbal_Laser_T2_Armored_Slope2</SubtypeId>
             </Id>
             <DisplayName>Gimbal Laser T2 Armored Slope 2</DisplayName>
@@ -1779,9 +1768,9 @@ Made by AutoMcD Astronautical.
         </Definition>
 
 <!-- MA_Gimbal_Laser_T2_Armored_Slope45 -->		
-	<Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+	<Definition xsi:type="MyObjectBuilder_ConveyorSorterDefinition">
             <Id>
-                <TypeId>LargeMissileTurret</TypeId>
+                <TypeId>ConveyorSorter</TypeId>
                 <SubtypeId>MA_Gimbal_Laser_T2_Armored_Slope45</SubtypeId>
             </Id>
             <DisplayName>Gimbal Laser T2 Armored Slope 45</DisplayName>
@@ -2035,9 +2024,9 @@ Made by Allied Astronautical.
 		
 <!-- MA_Gimbal_Laser_Armored_sb -->
 
-	<Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+	<Definition xsi:type="MyObjectBuilder_ConveyorSorterDefinition">
             <Id>
-                <TypeId>LargeMissileTurret</TypeId>
+                <TypeId>ConveyorSorter</TypeId>
                 <SubtypeId>MA_Gimbal_Laser_Armored_sb</SubtypeId>
             </Id>
             <DisplayName>Gimbal Laser Armored</DisplayName>
@@ -2130,9 +2119,9 @@ Made by AutoMcD Astronautical and CriegWarfare.</Description>
         </Definition>
 		
 <!-- MA_Gimbal_Laser_Armored_Slope_sb-->		
-	<Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+	<Definition xsi:type="MyObjectBuilder_ConveyorSorterDefinition">
             <Id>
-                <TypeId>LargeMissileTurret</TypeId>
+                <TypeId>ConveyorSorter</TypeId>
                 <SubtypeId>MA_Gimbal_Laser_Armored_Slope_sb</SubtypeId>
             </Id>
             <DisplayName>Gimbal Laser Armored Slope</DisplayName>
@@ -2224,9 +2213,9 @@ Made by AutoMcD Astronautical and CriegWarfare.</Description>
         </Definition>
 
 <!-- MA_Gimbal_Laser_Armored_Slope2_sb -->
-	<Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+	<Definition xsi:type="MyObjectBuilder_ConveyorSorterDefinition">
             <Id>
-                <TypeId>LargeMissileTurret</TypeId>
+                <TypeId>ConveyorSorter</TypeId>
                 <SubtypeId>MA_Gimbal_Laser_Armored_Slope2_sb</SubtypeId>
             </Id>
             <DisplayName>Gimbal Laser Armored Slope_2</DisplayName>
@@ -2314,9 +2303,9 @@ Made by AutoMcD Astronautical and CriegWarfare.</Description>
         </Definition>
 
 <!-- MA_Gimbal_Laser_Armored_Slope45_sb -->		
-	<Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+	<Definition xsi:type="MyObjectBuilder_ConveyorSorterDefinition">
             <Id>
-                <TypeId>LargeMissileTurret</TypeId>
+                <TypeId>ConveyorSorter</TypeId>
                 <SubtypeId>MA_Gimbal_Laser_Armored_Slope45_sb</SubtypeId>
             </Id>
             <DisplayName>Gimbal Laser Armored Slope 45</DisplayName>
@@ -2408,9 +2397,9 @@ Made by AutoMcD Astronautical and CriegWarfare.</Description>
         </Definition>
 		
 <!-- MA_Gimbal_Laser_sb -->		
-	<Definition xsi:type="MyObjectBuilder_LargeTurretBaseDefinition">
+	<Definition xsi:type="MyObjectBuilder_ConveyorSorterDefinition">
             <Id>
-                <TypeId>LargeMissileTurret</TypeId>
+                <TypeId>ConveyorSorter</TypeId>
                 <SubtypeId>MA_Gimbal_Laser_sb</SubtypeId>
             </Id>
             <DisplayName>Gimbal Laser</DisplayName>
@@ -2428,23 +2417,23 @@ Made by AutoMcD Astronautical and CriegWarfare.</Description>
 	
 	<BlockVariants>
         <BlockVariant>
-          <TypeId>LargeMissileTurret</TypeId>
+          <TypeId>ConveyorSorter</TypeId>
           <SubtypeId>MA_Gimbal_Laser_sb</SubtypeId>
         </BlockVariant>
 		<BlockVariant>
-          <TypeId>LargeMissileTurret</TypeId>
+          <TypeId>ConveyorSorter</TypeId>
           <SubtypeId>MA_Gimbal_Laser_Armored_sb</SubtypeId>
         </BlockVariant>
 		<BlockVariant>
-          <TypeId>LargeMissileTurret</TypeId>
+          <TypeId>ConveyorSorter</TypeId>
           <SubtypeId>MA_Gimbal_Laser_Armored_Slope_sb</SubtypeId>
         </BlockVariant>
 		<BlockVariant>
-          <TypeId>LargeMissileTurret</TypeId>
+          <TypeId>ConveyorSorter</TypeId>
           <SubtypeId>MA_Gimbal_Laser_Armored_Slope2_sb</SubtypeId>
         </BlockVariant>
 		<BlockVariant>
-          <TypeId>LargeMissileTurret</TypeId>
+          <TypeId>ConveyorSorter</TypeId>
           <SubtypeId>MA_Gimbal_Laser_Armored_Slope45_sb</SubtypeId>
         </BlockVariant>
 		

@@ -9,21 +9,21 @@
       <DisplayName>MA Weapons</DisplayName>
       <Name>MA_WC_Weapons</Name>
       <ItemIds>
-		<string>LargeMissileTurret/MA_PDX</string>
-        <string>LargeMissileTurret/MA_Gimbal_Laser</string>
-		<string>LargeMissileTurret/MA_Gimbal_Laser_Armored</string>
-		<string>LargeMissileTurret/MA_Gimbal_Laser_Armored_Slope</string>
-		<string>LargeMissileTurret/MA_Gimbal_Laser_Armored_Slope2</string>
-		<string>LargeMissileTurret/MA_Gimbal_Laser_Armored_Slope45</string>
+		<string>ConveyorSorter/MA_PDX</string>
+        <string>ConveyorSorter/MA_Gimbal_Laser</string>
+		<string>ConveyorSorter/MA_Gimbal_Laser_Armored</string>
+		<string>ConveyorSorter/MA_Gimbal_Laser_Armored_Slope</string>
+		<string>ConveyorSorter/MA_Gimbal_Laser_Armored_Slope2</string>
+		<string>ConveyorSorter/MA_Gimbal_Laser_Armored_Slope45</string>
 		
 		<string>ConveyorSorter/MA_T2PDX</string>
 		<string>ConveyorSorter/MA_T2PDX_Slope</string>		
 		<string>ConveyorSorter/MA_T2PDX_Slope2</string>
-        <string>LargeMissileTurret/MA_Gimbal_Laser_T2</string>
-		<string>LargeMissileTurret/MA_Gimbal_Laser_T2_Armored</string>
-		<string>LargeMissileTurret/MA_Gimbal_Laser_T2_Armored_Slope</string>
-		<string>LargeMissileTurret/MA_Gimbal_Laser_T2_Armored_Slope2</string>
-		<string>LargeMissileTurret/MA_Gimbal_Laser_T2_Armored_Slope45</string>
+        <string>ConveyorSorter/MA_Gimbal_Laser_T2</string>
+		<string>ConveyorSorter/MA_Gimbal_Laser_T2_Armored</string>
+		<string>ConveyorSorter/MA_Gimbal_Laser_T2_Armored_Slope</string>
+		<string>ConveyorSorter/MA_Gimbal_Laser_T2_Armored_Slope2</string>
+		<string>ConveyorSorter/MA_Gimbal_Laser_T2_Armored_Slope45</string>
 		
 		
 		<string>ConveyorSorter/MA_Fixed_T2</string>
@@ -46,7 +46,7 @@
 		<string>Passage/MA_Laser_Armor15</string>
 		<string>Passage/MA_Laser_Armor16</string>
 		
-		<string>LargeMissileTurret/MA_PDT</string>
+		<string>ConveyorSorter/MA_PDT</string>
 		<string>ConveyorSorter/MA_Gladius</string>		
 		<string>ConveyorSorter/MA_Meatball</string>
 		<string>ConveyorSorter/MA_Blister</string>
