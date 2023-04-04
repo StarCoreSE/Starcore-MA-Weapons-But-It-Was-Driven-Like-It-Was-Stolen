@@ -98,8 +98,8 @@ namespace Scripts {
             HardPoint = new HardPointDef
             {
                 PartName = "Slinger AC150mm", // Name of the weapon in terminal, should be unique for each weapon definition that shares a SubtypeId (i.e. multiweapons).
-                DeviateShotAngle = 0.3f, // Projectile inaccuracy in degrees.
-                AimingTolerance = 0.2f, // How many degrees off target a turret can fire at. 0 - 180 firing angle.
+                DeviateShotAngle = 0.2f, // Projectile inaccuracy in degrees.
+                AimingTolerance = 0.1f, // How many degrees off target a turret can fire at. 0 - 180 firing angle.
                 AimLeadingPrediction = Accurate, // Level of turret aim prediction; Off, Basic, Accurate, Advanced
                 DelayCeaseFire = 0, // Measured in game ticks (6 = 100ms, 60 = 1 second, etc..). Length of time the weapon continues firing after trigger is released.
                 AddToleranceToTracking = false, // Allows turret to only track to the edge of the AimingTolerance cone instead of dead centre.
@@ -107,7 +107,7 @@ namespace Scripts {
 
                 Ui = new UiDef
                 {
-                    RateOfFire = true, // Enables terminal slider for changing rate of fire.
+                    RateOfFire = false, // Enables terminal slider for changing rate of fire.
                     DamageModifier = false, // Enables terminal slider for changing damage per shot.
                     ToggleGuidance = false, // Enables terminal option to disable smart projectile guidance.
                     EnableOverload = false, // Enables terminal option to turn on Overload; this allows energy weapons to double damage per shot, at the cost of quadrupled power draw and heat gain, and 2% self damage on overheat.
@@ -160,7 +160,7 @@ namespace Scripts {
                 Loading = new LoadingDef
                 {
                     RateOfFire = 60, // Set this to 3600 for beam weapons.
-                    BarrelsPerShot = 1, // How many muzzles will fire a projectile per fire event.
+                    BarrelsPerShot = 2, // How many muzzles will fire a projectile per fire event.
                     TrajectilesPerBarrel = 1, // Number of projectiles per muzzle per fire event.
                     SkipBarrels = 0, // Number of muzzles to skip after each fire event.
                     ReloadTime = 0, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
@@ -357,10 +357,10 @@ namespace Scripts {
                     ReloadTime = 340, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     MagsToLoad = 1, // Number of physical magazines to consume on reload.
                     DelayUntilFire = 0, // How long the weapon waits before shooting after being told to fire. Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                    HeatPerShot = 10, // Heat generated per shot.
-                    MaxHeat = 600, // Max heat before weapon enters cooldown (70% of max heat).
+                    HeatPerShot = 14, // Heat generated per shot.
+                    MaxHeat = 300, // Max heat before weapon enters cooldown (70% of max heat).
                     Cooldown = .6f, // Percentage of max heat to be under to start firing again after overheat; accepts 0 - 0.95
-                    HeatSinkRate = 12, // Amount of heat lost per second.
+                    HeatSinkRate = 20, // Amount of heat lost per second.
                     DegradeRof = false, // Progressively lower rate of fire when over 80% heat threshold (80% of max heat).
                     ShotsInBurst = 4, // Use this if you don't want the weapon to fire an entire physical magazine before stopping to reload. Should not be more than your magazine capacity.
                     DelayAfterBurst = 25, // How long to spend "reloading" after each burst. Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
@@ -508,10 +508,10 @@ namespace Scripts {
                 {
                     RotateRate = 0.04f, // Max traversal speed of azimuth subpart in radians per tick (0.1 is approximately 360 degrees per second).
                     ElevateRate = 0.04f, // Max traversal speed of elevation subpart in radians per tick.
-                    MinAzimuth = -7,
-                    MaxAzimuth = 7,
-                    MinElevation = -7,
-                    MaxElevation = 7,
+                    MinAzimuth = -6,
+                    MaxAzimuth = 6,
+                    MinElevation = -6,
+                    MaxElevation = 6,
                     HomeAzimuth = 0, // Default resting rotation angle
                     HomeElevation = 0, // Default resting elevation
                     InventorySize = 2f, // Inventory capacity in kL.
@@ -548,10 +548,10 @@ namespace Scripts {
                     ReloadTime = 340, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     MagsToLoad = 1, // Number of physical magazines to consume on reload.
                     DelayUntilFire = 0, // How long the weapon waits before shooting after being told to fire. Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
-                    HeatPerShot = 10, // Heat generated per shot.
-                    MaxHeat = 600, // Max heat before weapon enters cooldown (70% of max heat).
+                    HeatPerShot = 14, // Heat generated per shot.
+                    MaxHeat = 300, // Max heat before weapon enters cooldown (70% of max heat).
                     Cooldown = .6f, // Percentage of max heat to be under to start firing again after overheat; accepts 0 - 0.95
-                    HeatSinkRate = 12, // Amount of heat lost per second.
+                    HeatSinkRate = 20, // Amount of heat lost per second.
                     DegradeRof = false, // Progressively lower rate of fire when over 80% heat threshold (80% of max heat).
                     ShotsInBurst = 4, // Use this if you don't want the weapon to fire an entire physical magazine before stopping to reload. Should not be more than your magazine capacity.
                     DelayAfterBurst = 25, // How long to spend "reloading" after each burst. Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
