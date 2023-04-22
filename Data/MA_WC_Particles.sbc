@@ -27524,13 +27524,14 @@
 			<Priority>1</Priority>
 		</ParticleEffect>
 		<!-- new gimbal laser hit from Pilfit and modified by Mike Dude -->
+		<!-- Muzzled came by with a baseball bat-->
 		<ParticleEffect xsi:type="MyObjectBuilder_ParticleEffect">
 			<Id>
 				<TypeId>ParticleEffect</TypeId>
-				<SubtypeId>LaserHitParticlesGimbal</SubtypeId>
+				<SubtypeId>LaserHitParticlesGimbal_Original</SubtypeId>
 			</Id>
 			<Version>0</Version>
-			<ParticleId>147211</ParticleId>
+			<ParticleId>-247211</ParticleId>
 			<Length>10</Length>
 			<DurationMin>60</DurationMin>
 			<DurationMax>0</DurationMax>

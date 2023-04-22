@@ -4691,8 +4691,8 @@
 
 <!-- MAsmallFlashExplosion -->
     <ParticleEffect xsi:type="ParticleEffect">
-      <Id Type="MyObjectBuilder_ParticleEffect" Subtype="MAsmallFlashExplosion" />
-      <ParticleId>65125</ParticleId>
+      <Id Type="MyObjectBuilder_ParticleEffect" Subtype="MAsmallFlashExplosion_Old" />
+      <ParticleId>-625125</ParticleId>
       <Length>1</Length>
       <Preload>0</Preload>
       <LowRes>false</LowRes>
