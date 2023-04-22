@@ -382,7 +382,7 @@ namespace Scripts
                         TextureMode = Normal, // Normal, Cycle, Chaos, Wave
                         Segmentation = new SegmentDef
                         {
-                            Enable = true, // If true Tracer TextureMode is ignored
+                            Enable = false, // If true Tracer TextureMode is ignored
                             Textures = new[] {
                                 "WeaponLaser",
                             },
@@ -775,7 +775,7 @@ namespace Scripts
                         TextureMode = Normal, // Normal, Cycle, Chaos, Wave
                         Segmentation = new SegmentDef
                         {
-                            Enable = true, // If true Tracer TextureMode is ignored
+                            Enable = false, // If true Tracer TextureMode is ignored
                             Textures = new[] {
                                 "WeaponLaser",
                             },
@@ -1174,7 +1174,7 @@ namespace Scripts
                         TextureMode = Normal, // Normal, Cycle, Chaos, Wave
                         Segmentation = new SegmentDef
                         {
-                            Enable = true, // If true Tracer TextureMode is ignored
+                            Enable = false, // If true Tracer TextureMode is ignored
                             Textures = new[] {
                                 "WeaponLaser",
                             },
@@ -1575,7 +1575,7 @@ namespace Scripts
                         TextureMode = Normal, // Normal, Cycle, Chaos, Wave
                         Segmentation = new SegmentDef
                         {
-                            Enable = true, // If true Tracer TextureMode is ignored
+                            Enable = false, // If true Tracer TextureMode is ignored
                             Textures = new[] {
                                 "WeaponLaser",
                             },
@@ -1970,7 +1970,7 @@ namespace Scripts
                         TextureMode = Normal, // Normal, Cycle, Chaos, Wave
                         Segmentation = new SegmentDef
                         {
-                            Enable = true, // If true Tracer TextureMode is ignored
+                            Enable = false, // If true Tracer TextureMode is ignored
                             Textures = new[] {
                                 "BlackFireSeg1",
                                 "BlackFireSeg2",
@@ -2776,7 +2776,7 @@ namespace Scripts
                         TextureMode = Normal, // Normal, Cycle, Chaos, Wave
                         Segmentation = new SegmentDef
                         {
-                            Enable = true, // If true Tracer TextureMode is ignored
+                            Enable = false, // If true Tracer TextureMode is ignored
                             Textures = new[] {
                                 "WeaponLaser",
                             },
@@ -3176,7 +3176,7 @@ namespace Scripts
                         TextureMode = Normal, // Normal, Cycle, Chaos, Wave
                         Segmentation = new SegmentDef
                         {
-                            Enable = true, // If true Tracer TextureMode is ignored
+                            Enable = false, // If true Tracer TextureMode is ignored
                             Textures = new[] {
                                 "WeaponLaser",
                             },
@@ -3606,7 +3606,7 @@ namespace Scripts
                         TextureMode = Normal, // Normal, Cycle, Chaos, Wave
                         Segmentation = new SegmentDef
                         {
-                            Enable = true, // If true Tracer TextureMode is ignored
+                            Enable = false, // If true Tracer TextureMode is ignored
                             Textures = new[] {
                                 "WeaponLaser",
                             },
@@ -4038,7 +4038,7 @@ namespace Scripts
                         TextureMode = Normal, // Normal, Cycle, Chaos, Wave
                         Segmentation = new SegmentDef
                         {
-                            Enable = true, // If true Tracer TextureMode is ignored
+                            Enable = false, // If true Tracer TextureMode is ignored
                             Textures = new[] {
                                 "WeaponLaser",
                             },
