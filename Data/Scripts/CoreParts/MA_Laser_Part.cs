@@ -274,9 +274,12 @@ namespace Scripts {
                 MaximumDiameter = 0, // Maximum radius of threat to engage; 0 = unlimited.
                 MaxTargetDistance = 0, // Maximum distance at which targets will be automatically shot at; 0 = unlimited.
                 MinTargetDistance = 200, // Minimum distance at which targets will be automatically shot at.
-                TopTargets = 4, // Maximum number of targets to randomize between; 0 = unlimited.
-                TopBlocks = 8, // Maximum number of blocks to randomize between; 0 = unlimited.
-                StopTrackingSpeed = 0, // Do not track threats traveling faster than this speed; 0 = unlimited.
+                TopTargets = 14, // Maximum number of targets to randomize between; 0 = unlimited.
+                CycleTargets = 2, // Number of targets to "cycle" per acquire attempt.
+                TopBlocks = 18, // Maximum number of blocks to randomize between; 0 = unlimited.
+                CycleBlocks = 8, // Number of blocks to "cycle" per acquire attempt.
+                StopTrackingSpeed = 0, // do not track target threats traveling faster than this speed
+                MaxTrackingTime = 35, // After this time has been reached the weapon will stop tracking existing target and scan for a new one, only applies to turreted weapons
             },
             HardPoint = new HardPointDef
             {
@@ -470,8 +473,11 @@ namespace Scripts {
                 MaxTargetDistance = 4500, // Maximum distance at which targets will be automatically shot at; 0 = unlimited.
                 MinTargetDistance = 100, // Minimum distance at which targets will be automatically shot at.
                 TopTargets = 14, // Maximum number of targets to randomize between; 0 = unlimited.
+                CycleTargets = 2, // Number of targets to "cycle" per acquire attempt.
                 TopBlocks = 18, // Maximum number of blocks to randomize between; 0 = unlimited.
-                StopTrackingSpeed = 0, // Do not track threats traveling faster than this speed; 0 = unlimited.
+                CycleBlocks = 8, // Number of blocks to "cycle" per acquire attempt.
+                StopTrackingSpeed = 0, // do not track target threats traveling faster than this speed
+                MaxTrackingTime = 35, // After this time has been reached the weapon will stop tracking existing target and scan for a new one, only applies to turreted weapons
             },
             HardPoint = new HardPointDef
             {
@@ -685,8 +691,11 @@ namespace Scripts {
                 MaxTargetDistance = 0, // Maximum distance at which targets will be automatically shot at; 0 = unlimited.
                 MinTargetDistance = 75, // Minimum distance at which targets will be automatically shot at.
                 TopTargets = 14, // Maximum number of targets to randomize between; 0 = unlimited.
-                TopBlocks = 4, // Maximum number of blocks to randomize between; 0 = unlimited.
-                StopTrackingSpeed = 0, // Do not track threats traveling faster than this speed; 0 = unlimited.
+                CycleTargets = 2, // Number of targets to "cycle" per acquire attempt.
+                TopBlocks = 18, // Maximum number of blocks to randomize between; 0 = unlimited.
+                CycleBlocks = 8, // Number of blocks to "cycle" per acquire attempt.
+                StopTrackingSpeed = 0, // do not track target threats traveling faster than this speed
+                MaxTrackingTime = 35, // After this time has been reached the weapon will stop tracking existing target and scan for a new one, only applies to turreted weapons
             },
             HardPoint = new HardPointDef
             {
@@ -899,12 +908,12 @@ namespace Scripts {
                 MaximumDiameter = 0, // Maximum radius of threat to engage; 0 = unlimited.
                 MaxTargetDistance = 0, // Maximum distance at which targets will be automatically shot at; 0 = unlimited.
                 MinTargetDistance = 50, // Minimum distance at which targets will be automatically shot at.
-                TopTargets = 16, // Maximum number of targets to randomize between; 0 = unlimited.
-                //CycleTargets = 8, // Number of targets to "cycle" per acquire attempt.
-                TopBlocks = 16, // Maximum number of blocks to randomize between; 0 = unlimited.
-                //CycleBlocks = 8, // Number of blocks to "cycle" per acquire attempt.
-                //MaxTrackingTime = 0, // After this time has been reached the weapon will stop tracking existing target and scan for a new one
-                StopTrackingSpeed = 0, // Do not track threats traveling faster than this speed; 0 = unlimited.
+                TopTargets = 14, // Maximum number of targets to randomize between; 0 = unlimited.
+                CycleTargets = 2, // Number of targets to "cycle" per acquire attempt.
+                TopBlocks = 18, // Maximum number of blocks to randomize between; 0 = unlimited.
+                CycleBlocks = 8, // Number of blocks to "cycle" per acquire attempt.
+                StopTrackingSpeed = 0, // do not track target threats traveling faster than this speed
+                MaxTrackingTime = 35, // After this time has been reached the weapon will stop tracking existing target and scan for a new one, only applies to turreted weapons
             },
             HardPoint = new HardPointDef
             {
@@ -1304,9 +1313,12 @@ namespace Scripts {
                 MaximumDiameter = 0, // Maximum radius of threat to engage; 0 = unlimited.
                 MaxTargetDistance = 900, // Maximum distance at which targets will be automatically shot at; 0 = unlimited.
                 MinTargetDistance = 5, // Minimum distance at which targets will be automatically shot at.
-                TopTargets = 0, // Maximum number of targets to randomize between; 0 = unlimited.
-                TopBlocks = 0, // Maximum number of blocks to randomize between; 0 = unlimited.
-                StopTrackingSpeed = 0, // Do not track threats traveling faster than this speed; 0 = unlimited.
+                TopTargets = 14, // Maximum number of targets to randomize between; 0 = unlimited.
+                CycleTargets = 2, // Number of targets to "cycle" per acquire attempt.
+                TopBlocks = 18, // Maximum number of blocks to randomize between; 0 = unlimited.
+                CycleBlocks = 8, // Number of blocks to "cycle" per acquire attempt.
+                StopTrackingSpeed = 0, // do not track target threats traveling faster than this speed
+                MaxTrackingTime = 35, // After this time has been reached the weapon will stop tracking existing target and scan for a new one, only applies to turreted weapons
             },
             HardPoint = new HardPointDef
             {
@@ -1509,9 +1521,12 @@ namespace Scripts {
                 MaximumDiameter = 0, // Maximum radius of threat to engage; 0 = unlimited.
                 MaxTargetDistance = 0, // Maximum distance at which targets will be automatically shot at; 0 = unlimited.
                 MinTargetDistance = 0, // Minimum distance at which targets will be automatically shot at.
-                TopTargets = 0, // Maximum number of targets to randomize between; 0 = unlimited.
-                TopBlocks = 0, // Maximum number of blocks to randomize between; 0 = unlimited.
-                StopTrackingSpeed = 0, // Do not track threats traveling faster than this speed; 0 = unlimited.
+                TopTargets = 14, // Maximum number of targets to randomize between; 0 = unlimited.
+                CycleTargets = 2, // Number of targets to "cycle" per acquire attempt.
+                TopBlocks = 18, // Maximum number of blocks to randomize between; 0 = unlimited.
+                CycleBlocks = 8, // Number of blocks to "cycle" per acquire attempt.
+                StopTrackingSpeed = 0, // do not track target threats traveling faster than this speed
+                MaxTrackingTime = 35, // After this time has been reached the weapon will stop tracking existing target and scan for a new one, only applies to turreted weapons
             },
             HardPoint = new HardPointDef
             {
@@ -1697,9 +1712,12 @@ namespace Scripts {
                 MaximumDiameter = 0, // Maximum radius of threat to engage; 0 = unlimited.
                 MaxTargetDistance = 4000, // Maximum distance at which targets will be automatically shot at; 0 = unlimited.
                 MinTargetDistance = 10, // Minimum distance at which targets will be automatically shot at.
-                TopTargets = 10, // Maximum number of targets to randomize between; 0 = unlimited.
-                TopBlocks = 10, // Maximum number of blocks to randomize between; 0 = unlimited.
-                StopTrackingSpeed = 0, // Do not track threats traveling faster than this speed; 0 = unlimited.
+                TopTargets = 14, // Maximum number of targets to randomize between; 0 = unlimited.
+                CycleTargets = 2, // Number of targets to "cycle" per acquire attempt.
+                TopBlocks = 18, // Maximum number of blocks to randomize between; 0 = unlimited.
+                CycleBlocks = 8, // Number of blocks to "cycle" per acquire attempt.
+                StopTrackingSpeed = 0, // do not track target threats traveling faster than this speed
+                MaxTrackingTime = 35, // After this time has been reached the weapon will stop tracking existing target and scan for a new one, only applies to turreted weapons
             },
             HardPoint = new HardPointDef
             {

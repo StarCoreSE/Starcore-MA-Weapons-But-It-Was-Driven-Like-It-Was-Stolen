@@ -1970,7 +1970,7 @@ namespace Scripts
                         TextureMode = Normal, // Normal, Cycle, Chaos, Wave
                         Segmentation = new SegmentDef
                         {
-                            Enable = false, // If true Tracer TextureMode is ignored
+                            Enable = true, // If true Tracer TextureMode is ignored
                             Textures = new[] {
                                 "BlackFireSeg1",
                                 "BlackFireSeg2",
