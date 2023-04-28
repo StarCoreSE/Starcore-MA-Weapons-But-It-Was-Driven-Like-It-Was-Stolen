@@ -3,20 +3,10 @@ using static Scripts.Structure.WeaponDefinition.AmmoDef;
 using static Scripts.Structure.WeaponDefinition.AmmoDef.EjectionDef;
 using static Scripts.Structure.WeaponDefinition.AmmoDef.EjectionDef.SpawnType;
 using static Scripts.Structure.WeaponDefinition.AmmoDef.ShapeDef.Shapes;
-using static Scripts.Structure.WeaponDefinition.AmmoDef.DamageScaleDef.CustomScalesDef.SkipMode;
 using static Scripts.Structure.WeaponDefinition.AmmoDef.GraphicDef;
 using static Scripts.Structure.WeaponDefinition.AmmoDef.FragmentDef;
-using static Scripts.Structure.WeaponDefinition.AmmoDef.PatternDef.PatternModes;
 using static Scripts.Structure.WeaponDefinition.AmmoDef.FragmentDef.TimedSpawnDef.PointTypes;
 using static Scripts.Structure.WeaponDefinition.AmmoDef.TrajectoryDef;
-using static Scripts.Structure.WeaponDefinition.AmmoDef.TrajectoryDef.ApproachDef.Conditions;
-using static Scripts.Structure.WeaponDefinition.AmmoDef.TrajectoryDef.ApproachDef.UpRelativeTo;
-using static Scripts.Structure.WeaponDefinition.AmmoDef.TrajectoryDef.ApproachDef.FwdRelativeTo;
-using static Scripts.Structure.WeaponDefinition.AmmoDef.TrajectoryDef.ApproachDef.ReInitCondition;
-using static Scripts.Structure.WeaponDefinition.AmmoDef.TrajectoryDef.ApproachDef.RelativeTo;
-using static Scripts.Structure.WeaponDefinition.AmmoDef.TrajectoryDef.ApproachDef.ConditionOperators;
-using static Scripts.Structure.WeaponDefinition.AmmoDef.TrajectoryDef.ApproachDef.StageEvents;
-using static Scripts.Structure.WeaponDefinition.AmmoDef.TrajectoryDef.ApproachDef;
 using static Scripts.Structure.WeaponDefinition.AmmoDef.TrajectoryDef.GuidanceType;
 using static Scripts.Structure.WeaponDefinition.AmmoDef.DamageScaleDef;
 using static Scripts.Structure.WeaponDefinition.AmmoDef.DamageScaleDef.ShieldDef.ShieldType;
@@ -46,7 +36,7 @@ namespace Scripts
             HybridRound = false, // Use both a physical ammo magazine and energy per shot.
             EnergyCost = 0.417f, // Scaler for energy per shot (EnergyCost * BaseDamage * (RateOfFire / 3600) * BarrelsPerShot * TrajectilesPerBarrel). Uses EffectStrength instead of BaseDamage if EWAR.
             BaseDamage = 60f, // Direct damage; one steel plate is worth 100.
-            Mass = 0f, // In kilograms; how much force the impact will apply to the target.
+            Mass = 0f, // In kilograms; how much force the impact will apply    to the target.
             Health = 0, // How much damage the projectile can take from other projectiles (base of 1 per hit) before dying; 0 disables this and makes the projectile untargetable.
             BackKickForce = 0f, // Recoil.
             DecayPerShot = 0f, // Damage to the firing weapon itself.
@@ -119,7 +109,7 @@ namespace Scripts
                 SelfDamage = false, // Whether to damage the weapon's own grid.
                 HealthHitModifier = 1, // How much Health to subtract from another projectile on hit; defaults to 1 if zero or less.
                 VoxelHitModifier = 1, // Voxel damage multiplier; defaults to 1 if zero or less.
-                Characters = .25f, // Character damage multiplier; defaults to 1 if zero or less.
+                Characters = 1f, // Character damage multiplier; defaults to 1 if zero or less.
                 // For the following modifier values: -1 = disabled (higher performance), 0 = no damage, 0.01f = 1% damage, 2 = 200% damage.
                 FallOff = new FallOffDef
                 {
@@ -140,14 +130,9 @@ namespace Scripts
                 },
                 Shields = new ShieldDef
                 {
-                    Modifier = 4f, // Multiplier for damage against shields.
+                    Modifier = 1f, // Multiplier for damage against shields.
                     Type = Default, // Damage vs healing against shields; Default, Heal
                     BypassModifier = -1f, // If greater than zero, the percentage of damage that will penetrate the shield.
-                },
-                Deform = new DeformDef
-                {
-                    DeformType = AllDamagedBlocks,
-                    DeformDelay = 30,
                 },
                 DamageType = new DamageTypes // Damage type of each element of the projectile's damage; Kinetic, Energy
                 {
@@ -180,7 +165,7 @@ namespace Scripts
                 {
                     Enable = false,
                     Radius = 0f, // Meters
-                    Damage = 2000f,
+                    Damage = 0,
                     Depth = 0f, // Meters
                     MaxAbsorb = 0f,
                     Falloff = Curve, //.NoFalloff applies the same damage to all blocks in radius
@@ -195,8 +180,8 @@ namespace Scripts
                 {
                     Enable = false,
                     Radius = 0f, // Meters
-                    Damage = 4000f,
-                    Depth = 1f,
+                    Damage = 0,
+                    Depth = 0f,
                     MaxAbsorb = 0f,
                     Falloff = Curve, //.NoFalloff applies the same damage to all blocks in radius
                     //.Linear drops evenly by distance from center out to max radius
@@ -209,8 +194,8 @@ namespace Scripts
                     NoVisuals = false,
                     NoSound = false,
                     ParticleScale = .7f,
-                    CustomParticle = "MAsmallFlashExplosion", // Particle SubtypeID, from your Particle SBC
-                    CustomSound = "ArcWepSmallMissileExplShip", // SubtypeID from your Audio SBC, not a filename
+                    CustomParticle = "", // Particle SubtypeID, from your Particle SBC
+                    CustomSound = "", // SubtypeID from your Audio SBC, not a filename
                     Shape = Diamond, // Round or Diamond
                 }, 
             },
@@ -384,13 +369,13 @@ namespace Scripts
                         TextureMode = Normal, // Normal, Cycle, Chaos, Wave
                         Segmentation = new SegmentDef
                         {
-                            Enable = false, // If true Tracer TextureMode is ignored
+                            Enable = true, // If true Tracer TextureMode is ignored
                             Textures = new[] {
                                 "WeaponLaser",
                             },
-                            SegmentLength = 20f, // Uses the values below.
-                            SegmentGap = 15f, // Uses Tracer textures and values
-                            Speed = 40f, // meters per second
+                            SegmentLength = 120f, // Uses the values below.
+                            SegmentGap = 25f, // Uses Tracer textures and values
+                            Speed = 140f, // meters per second
                             Color = Color(red: 20, green: 0, blue: 0, alpha: .8f),
                             WidthMultiplier = .9f,
                             Reverse = false,
@@ -541,7 +526,7 @@ namespace Scripts
                 },
                 Shields = new ShieldDef
                 {
-                    Modifier = 4f, // Multiplier for damage against shields.
+                    Modifier = 1f, // Multiplier for damage against shields.
                     Type = Default, // Damage vs healing against shields; Default, Heal
                     BypassModifier = -1f, // If greater than zero, the percentage of damage that will penetrate the shield.
                 },
@@ -2127,13 +2112,13 @@ namespace Scripts
                 MaxIntegrity = 0f, // Blocks with integrity higher than this value will be immune to damage from this projectile; 0 = disabled.
                 DamageVoxels = false, // Whether to damage voxels.
                 SelfDamage = false, // Whether to damage the weapon's own grid.
-                HealthHitModifier = 3f, // How much Health to subtract from another projectile on hit; defaults to 1 if zero or less.
+                HealthHitModifier = 18f, // How much Health to subtract from another projectile on hit; defaults to 1 if zero or less.
                 VoxelHitModifier = 1, // Voxel damage multiplier; defaults to 1 if zero or less.
                 Characters = 1f, // Character damage multiplier; defaults to 1 if zero or less.
                 // For the following modifier values: -1 = disabled (higher performance), 0 = no damage, 0.01f = 1% damage, 2 = 200% damage.
                 FallOff = new FallOffDef
                 {
-                    Distance = 600f, // Distance at which damage begins falling off.
+                    Distance = 800f, // Distance at which damage begins falling off.
                     MinMultipler = 0.1f, // Value from 0.0001f to 1f where 0.1f would be a min damage of 10% of base damage.
                 },
                 Grids = new GridSizeDef
@@ -2153,11 +2138,6 @@ namespace Scripts
                     Modifier = 10f, // Multiplier for damage against shields.
                     Type = Default, // Damage vs healing against shields; Default, Heal
                     BypassModifier = -1f, // If greater than zero, the percentage of damage that will penetrate the shield.
-                },
-                Deform = new DeformDef
-                {
-                    DeformType = AllDamagedBlocks,
-                    DeformDelay = 30,
                 },
                 DamageType = new DamageTypes // Damage type of each element of the projectile's damage; Kinetic, Energy
                 {
@@ -2190,7 +2170,7 @@ namespace Scripts
                 {
                     Enable = false,
                     Radius = 0f, // Meters
-                    Damage = 2000f,
+                    Damage = 0,
                     Depth = 0f, // Meters
                     MaxAbsorb = 0f,
                     Falloff = Curve, //.NoFalloff applies the same damage to all blocks in radius
@@ -2205,8 +2185,8 @@ namespace Scripts
                 {
                     Enable = false,
                     Radius = 0f, // Meters
-                    Damage = 4000f,
-                    Depth = 1f,
+                    Damage = 0,
+                    Depth = 0f,
                     MaxAbsorb = 0f,
                     Falloff = Curve, //.NoFalloff applies the same damage to all blocks in radius
                     //.Linear drops evenly by distance from center out to max radius
@@ -2219,8 +2199,8 @@ namespace Scripts
                     NoVisuals = false,
                     NoSound = false,
                     ParticleScale = .7f,
-                    CustomParticle = "MAsmallFlashExplosion", // Particle SubtypeID, from your Particle SBC
-                    CustomSound = "ArcWepSmallMissileExplShip", // SubtypeID from your Audio SBC, not a filename
+                    CustomParticle = "", // Particle SubtypeID, from your Particle SBC
+                    CustomSound = "", // SubtypeID from your Audio SBC, not a filename
                     Shape = Diamond, // Round or Diamond
                 }, 
             },
@@ -2293,7 +2273,7 @@ namespace Scripts
                 MaxLifeTime = 0, // 0 is disabled, Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                 AccelPerSec = 0f,
                 DesiredSpeed = 6000, // voxel phasing if you go above 5100
-                MaxTrajectory = 750f,
+                MaxTrajectory = 950f,
                 //FieldTime = 0, // 0 is disabled, a value causes the projectile to come to rest, spawn a field and remain for a time (Measured in game ticks, 60 = 1 second)
                 GravityMultiplier = 0f, // Gravity multiplier, influences the trajectory of the projectile, value greater than 0 to enable.
                 SpeedVariance = Random(start: 0, end: 0), // subtracts value from DesiredSpeed
@@ -2855,7 +2835,7 @@ namespace Scripts
             AmmoMagazine = "Energy", // SubtypeId of physical ammo magazine. Use "Energy" for weapons without physical ammo.
             AmmoRound = "MA_Laser_5", // Name of ammo in terminal, should be different for each ammo type used by the same weapon.
             HybridRound = false, // Use both a physical ammo magazine and energy per shot.
-            EnergyCost = 0.417f, // Scaler for energy per shot (EnergyCost * BaseDamage * (RateOfFire / 3600) * BarrelsPerShot * TrajectilesPerBarrel). Uses EffectStrength instead of BaseDamage if EWAR.
+            EnergyCost = 1f, // Scaler for energy per shot (EnergyCost * BaseDamage * (RateOfFire / 3600) * BarrelsPerShot * TrajectilesPerBarrel). Uses EffectStrength instead of BaseDamage if EWAR.
             BaseDamage = 60f, // Direct damage; one steel plate is worth 100.
             Mass = 0f, // In kilograms; how much force the impact will apply to the target.
             Health = 0, // How much damage the projectile can take from other projectiles (base of 1 per hit) before dying; 0 disables this and makes the projectile untargetable.
@@ -2925,7 +2905,7 @@ namespace Scripts
                 SelfDamage = false, // Whether to damage the weapon's own grid.
                 HealthHitModifier = 2, // How much Health to subtract from another projectile on hit; defaults to 1 if zero or less.
                 VoxelHitModifier = 1, // Voxel damage multiplier; defaults to 1 if zero or less.
-                Characters = .25f, // Character damage multiplier; defaults to 1 if zero or less.
+                Characters = 1f, // Character damage multiplier; defaults to 1 if zero or less.
                 // For the following modifier values: -1 = disabled (higher performance), 0 = no damage, 0.01f = 1% damage, 2 = 200% damage.
                 FallOff = new FallOffDef
                 {
@@ -2949,11 +2929,6 @@ namespace Scripts
                     Modifier = 8f, // Multiplier for damage against shields.
                     Type = Default, // Damage vs healing against shields; Default, Heal
                     BypassModifier = -1f, // If greater than zero, the percentage of damage that will penetrate the shield.
-                },
-                Deform = new DeformDef
-                {
-                    DeformType = AllDamagedBlocks,
-                    DeformDelay = 30,
                 },
                 DamageType = new DamageTypes // Damage type of each element of the projectile's damage; Kinetic, Energy
                 {
@@ -2986,10 +2961,10 @@ namespace Scripts
                 {
                     Enable = false,
                     Radius = 0f, // Meters
-                    Damage = 2000f,
+                    Damage = 0,
                     Depth = 0f, // Meters
                     MaxAbsorb = 0f,
-                    Falloff = Curve, //.NoFalloff applies the same damage to all blocks in radius
+                    Falloff = Pooled, //.NoFalloff applies the same damage to all blocks in radius
                     //.Linear drops evenly by distance from center out to max radius
                     //.Curve drops off damage sharply as it approaches the max radius
                     //.InvCurve drops off sharply from the middle and tapers to max radius
@@ -3001,10 +2976,10 @@ namespace Scripts
                 {
                     Enable = false,
                     Radius = 0f, // Meters
-                    Damage = 4000f,
-                    Depth = 1f,
+                    Damage = 0,
+                    Depth = 0f,
                     MaxAbsorb = 0f,
-                    Falloff = Curve, //.NoFalloff applies the same damage to all blocks in radius
+                    Falloff = Pooled, //.NoFalloff applies the same damage to all blocks in radius
                     //.Linear drops evenly by distance from center out to max radius
                     //.Curve drops off damage sharply as it approaches the max radius
                     //.InvCurve drops off sharply from the middle and tapers to max radius
@@ -3015,8 +2990,8 @@ namespace Scripts
                     NoVisuals = false,
                     NoSound = false,
                     ParticleScale = .7f,
-                    CustomParticle = "MAsmallFlashExplosion", // Particle SubtypeID, from your Particle SBC
-                    CustomSound = "ArcWepSmallMissileExplShip", // SubtypeID from your Audio SBC, not a filename
+                    CustomParticle = "", // Particle SubtypeID, from your Particle SBC
+                    CustomSound = "", // SubtypeID from your Audio SBC, not a filename
                     Shape = Diamond, // Round or Diamond
                 }, 
             },
@@ -3190,18 +3165,18 @@ namespace Scripts
                         TextureMode = Normal, // Normal, Cycle, Chaos, Wave
                         Segmentation = new SegmentDef
                         {
-                            Enable = false, // If true Tracer TextureMode is ignored
+                            Enable = true, // If true Tracer TextureMode is ignored
                             Textures = new[] {
                                 "WeaponLaser",
                             },
-                            SegmentLength = 20f, // Uses the values below.
-                            SegmentGap = 15f, // Uses Tracer textures and values
-                            Speed = 40f, // meters per second
+                            SegmentLength = 145f, // Uses the values below.
+                            SegmentGap = 20f, // Uses Tracer textures and values
+                            Speed = 140, // meters per second
                             Color = Color(red: 20, green: 2, blue: 0, alpha: .8f),
                             WidthMultiplier = .9f,
                             Reverse = false,
                             UseLineVariance = true,
-                            WidthVariance = Random(start: -.05f, end: 0f),
+                            WidthVariance = Random(start: -.07f, end: 0f),
                             ColorVariance = Random(start: 0.6f, end: 1f)
                         }
                     },
@@ -3227,7 +3202,7 @@ namespace Scripts
                     },
                 },
             },
-            AmmoAudio = new AmmoAudioDef
+           AmmoAudio = new AmmoAudioDef
             {
                 TravelSound = "",
                 HitSound = "",

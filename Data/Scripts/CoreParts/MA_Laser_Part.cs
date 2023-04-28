@@ -267,25 +267,25 @@ namespace Scripts {
                 SubSystems = new[] {
                     Thrust, Utility, Offense, Power, Production, Any, // Subsystem targeting priority: Offense, Utility, Power, Production, Thrust, Jumping, Steering, Any
                 },
-                ClosestFirst = false, // Tries to pick closest targets first (blocks on grids, projectiles, etc...).
+                ClosestFirst = true, // Tries to pick closest targets first (blocks on grids, projectiles, etc...).
                 IgnoreDumbProjectiles = true, // Don't fire at non-smart projectiles.
                 LockedSmartOnly = false, // Only fire at smart projectiles that are locked on to parent grid.
                 MinimumDiameter = 0, // Minimum radius of threat to engage.
                 MaximumDiameter = 0, // Maximum radius of threat to engage; 0 = unlimited.
                 MaxTargetDistance = 0, // Maximum distance at which targets will be automatically shot at; 0 = unlimited.
-                MinTargetDistance = 200, // Minimum distance at which targets will be automatically shot at.
-                TopTargets = 14, // Maximum number of targets to randomize between; 0 = unlimited.
-                CycleTargets = 2, // Number of targets to "cycle" per acquire attempt.
-                TopBlocks = 18, // Maximum number of blocks to randomize between; 0 = unlimited.
-                CycleBlocks = 8, // Number of blocks to "cycle" per acquire attempt.
+                MinTargetDistance = 0, // Minimum distance at which targets will be automatically shot at.
+                TopTargets = 24, // Maximum number of targets to randomize between; 0 = unlimited.
+                CycleTargets = 4, // Number of targets to "cycle" per acquire attempt.
+                TopBlocks = 24, // Maximum number of blocks to randomize between; 0 = unlimited.
+                CycleBlocks = 2, // Number of blocks to "cycle" per acquire attempt.
                 StopTrackingSpeed = 0, // do not track target threats traveling faster than this speed
-                MaxTrackingTime = 35, // After this time has been reached the weapon will stop tracking existing target and scan for a new one, only applies to turreted weapons
+                MaxTrackingTime = 65, // After this time has been reached the weapon will stop tracking existing target and scan for a new one, only applies to turreted weapons
             },
             HardPoint = new HardPointDef
             {
                 PartName = "T1PDX", // Name of the weapon in terminal, should be unique for each weapon definition that shares a SubtypeId (i.e. multiweapons).
                 DeviateShotAngle = 0f, // Projectile inaccuracy in degrees.
-                AimingTolerance = 6f, // How many degrees off target a turret can fire at. 0 - 180 firing angle.
+                AimingTolerance = 3f, // How many degrees off target a turret can fire at. 0 - 180 firing angle.
                 AimLeadingPrediction = Off, // Level of turret aim prediction; Off, Basic, Accurate, Advanced
                 DelayCeaseFire = 10, // Measured in game ticks (6 = 100ms, 60 = 1 second, etc..). Length of time the weapon continues firing after trigger is released.
                 AddToleranceToTracking = false, // Allows turret to only track to the edge of the AimingTolerance cone instead of dead centre.
@@ -349,13 +349,13 @@ namespace Scripts {
                     BarrelsPerShot = 1, // How many muzzles will fire a projectile per fire event.
                     TrajectilesPerBarrel = 1, // Number of projectiles per muzzle per fire event.
                     SkipBarrels = 0, // Number of muzzles to skip after each fire event.
-                    ReloadTime = 90, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                    ReloadTime = 1, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     MagsToLoad = 1, // Number of physical magazines to consume on reload.
-                    DelayUntilFire = 10, // How long the weapon waits before shooting after being told to fire. Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                    DelayUntilFire = 1, // How long the weapon waits before shooting after being told to fire. Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     HeatPerShot = 1, // Heat generated per shot.
                     MaxHeat = 1200, // Max heat before weapon enters cooldown (70% of max heat).
                     Cooldown = .5f, // Percentage of max heat to be under to start firing again after overheat; accepts 0 - 0.95
-                    HeatSinkRate = 60, // Amount of heat lost per second.
+                    HeatSinkRate = 120, // Amount of heat lost per second.
                     DegradeRof = false, // Progressively lower rate of fire when over 80% heat threshold (80% of max heat).
                     ShotsInBurst = 0, // Use this if you don't want the weapon to fire an entire physical magazine before stopping to reload. Should not be more than your magazine capacity.
                     DelayAfterBurst = 0, // How long to spend "reloading" after each burst. Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
@@ -465,19 +465,19 @@ namespace Scripts {
                 SubSystems = new[] {
                     Thrust, Utility, Offense, Power, Production, Any, // Subsystem targeting priority: Offense, Utility, Power, Production, Thrust, Jumping, Steering, Any
                 },
-                ClosestFirst = false, // Tries to pick closest targets first (blocks on grids, projectiles, etc...).
+                ClosestFirst = true, // Tries to pick closest targets first (blocks on grids, projectiles, etc...).
                 IgnoreDumbProjectiles = true, // Don't fire at non-smart projectiles.
                 LockedSmartOnly = false, // Only fire at smart projectiles that are locked on to parent grid.
                 MinimumDiameter = 0, // Minimum radius of threat to engage.
                 MaximumDiameter = 0, // Maximum radius of threat to engage; 0 = unlimited.
                 MaxTargetDistance = 4500, // Maximum distance at which targets will be automatically shot at; 0 = unlimited.
-                MinTargetDistance = 100, // Minimum distance at which targets will be automatically shot at.
-                TopTargets = 14, // Maximum number of targets to randomize between; 0 = unlimited.
-                CycleTargets = 2, // Number of targets to "cycle" per acquire attempt.
+                MinTargetDistance = 0, // Minimum distance at which targets will be automatically shot at.
+                TopTargets = 24, // Maximum number of targets to randomize between; 0 = unlimited.
+                CycleTargets = 4, // Number of targets to "cycle" per acquire attempt.
                 TopBlocks = 18, // Maximum number of blocks to randomize between; 0 = unlimited.
-                CycleBlocks = 8, // Number of blocks to "cycle" per acquire attempt.
+                CycleBlocks = 1, // Number of blocks to "cycle" per acquire attempt.
                 StopTrackingSpeed = 0, // do not track target threats traveling faster than this speed
-                MaxTrackingTime = 35, // After this time has been reached the weapon will stop tracking existing target and scan for a new one, only applies to turreted weapons
+                MaxTrackingTime = 120, // After this time has been reached the weapon will stop tracking existing target and scan for a new one, only applies to turreted weapons
             },
             HardPoint = new HardPointDef
             {
@@ -486,7 +486,7 @@ namespace Scripts {
                 AimingTolerance = 2f, // How many degrees off target a turret can fire at. 0 - 180 firing angle.
                 AimLeadingPrediction = Off, // Level of turret aim prediction; Off, Basic, Accurate, Advanced
                 DelayCeaseFire = 10, // Measured in game ticks (6 = 100ms, 60 = 1 second, etc..). Length of time the weapon continues firing after trigger is released.
-                AddToleranceToTracking = false, // Allows turret to only track to the edge of the AimingTolerance cone instead of dead centre.
+                AddToleranceToTracking = true, // Allows turret to only track to the edge of the AimingTolerance cone instead of dead centre.
                 CanShootSubmerged = true, // Whether the weapon can be fired underwater when using WaterMod.
 
                 Ui = new UiDef
@@ -548,13 +548,13 @@ namespace Scripts {
                     BarrelsPerShot = 1, // How many muzzles will fire a projectile per fire event.
                     TrajectilesPerBarrel = 1, // Number of projectiles per muzzle per fire event.
                     SkipBarrels = 0, // Number of muzzles to skip after each fire event.
-                    ReloadTime = 90, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                    ReloadTime = 1, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     MagsToLoad = 1, // Number of physical magazines to consume on reload.
-                    DelayUntilFire = 15, // How long the weapon waits before shooting after being told to fire. Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                    DelayUntilFire = 10, // How long the weapon waits before shooting after being told to fire. Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     HeatPerShot = 1, // Heat generated per shot.
                     MaxHeat = 400, // Max heat before weapon enters cooldown (70% of max heat).
                     Cooldown = .8f, // Percentage of max heat to be under to start firing again after overheat; accepts 0 - 0.95
-                    HeatSinkRate = 30, // Amount of heat lost per second.
+                    HeatSinkRate = 300, // Amount of heat lost per second.
                     DegradeRof = false, // Progressively lower rate of fire when over 80% heat threshold (80% of max heat).
                     ShotsInBurst = 0, // Use this if you don't want the weapon to fire an entire physical magazine before stopping to reload. Should not be more than your magazine capacity.
                     DelayAfterBurst = 0, // How long to spend "reloading" after each burst. Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
@@ -684,19 +684,19 @@ namespace Scripts {
                 SubSystems = new[] {
                     Thrust, Utility, Offense, Power, Production, Any, // Subsystem targeting priority: Offense, Utility, Power, Production, Thrust, Jumping, Steering, Any
                 },
-                ClosestFirst = false, // Tries to pick closest targets first (blocks on grids, projectiles, etc...).
+                ClosestFirst = true, // Tries to pick closest targets first (blocks on grids, projectiles, etc...).
                 IgnoreDumbProjectiles = true, // Don't fire at non-smart projectiles.
                 LockedSmartOnly = false, // Only fire at smart projectiles that are locked on to parent grid.
                 MinimumDiameter = 0, // Minimum radius of threat to engage.
                 MaximumDiameter = 0, // Maximum radius of threat to engage; 0 = unlimited.
                 MaxTargetDistance = 0, // Maximum distance at which targets will be automatically shot at; 0 = unlimited.
-                MinTargetDistance = 75, // Minimum distance at which targets will be automatically shot at.
-                TopTargets = 14, // Maximum number of targets to randomize between; 0 = unlimited.
-                CycleTargets = 2, // Number of targets to "cycle" per acquire attempt.
-                TopBlocks = 18, // Maximum number of blocks to randomize between; 0 = unlimited.
-                CycleBlocks = 8, // Number of blocks to "cycle" per acquire attempt.
+                MinTargetDistance = 0, // Minimum distance at which targets will be automatically shot at.
+                TopTargets = 24, // Maximum number of targets to randomize between; 0 = unlimited.
+                CycleTargets = 4, // Number of targets to "cycle" per acquire attempt.
+                TopBlocks = 24, // Maximum number of blocks to randomize between; 0 = unlimited.
+                CycleBlocks = 2, // Number of blocks to "cycle" per acquire attempt.
                 StopTrackingSpeed = 0, // do not track target threats traveling faster than this speed
-                MaxTrackingTime = 35, // After this time has been reached the weapon will stop tracking existing target and scan for a new one, only applies to turreted weapons
+                MaxTrackingTime = 65, // After this time has been reached the weapon will stop tracking existing target and scan for a new one, only applies to turreted weapons
             },
             HardPoint = new HardPointDef
             {
@@ -732,7 +732,7 @@ namespace Scripts {
                     MinAzimuth = -180,
                     MaxAzimuth = 180,
                     MinElevation = 45,
-                    MaxElevation = 90,
+                    MaxElevation = 95,
                     HomeAzimuth = 0, // Default resting rotation angle
                     HomeElevation = 89, // Default resting elevation
                     InventorySize = 0.658f, // Inventory capacity in kL.
@@ -768,7 +768,7 @@ namespace Scripts {
                     SkipBarrels = 0, // Number of muzzles to skip after each fire event.
                     ReloadTime = 90, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     MagsToLoad = 1, // Number of physical magazines to consume on reload.
-                    DelayUntilFire = 10, // How long the weapon waits before shooting after being told to fire. Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                    DelayUntilFire = 1, // How long the weapon waits before shooting after being told to fire. Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     HeatPerShot = 1, // Heat generated per shot.
                     MaxHeat = 1200, // Max heat before weapon enters cooldown (70% of max heat).
                     Cooldown = .8f, // Percentage of max heat to be under to start firing again after overheat; accepts 0 - 0.95
@@ -902,19 +902,19 @@ namespace Scripts {
                 SubSystems = new[] {
                     Thrust, Utility, Offense, Power, Production, Any, // Subsystem targeting priority: Offense, Utility, Power, Production, Thrust, Jumping, Steering, Any
                 },
-                ClosestFirst = false, // Tries to pick closest targets first (blocks on grids, projectiles, etc...).
+                ClosestFirst = true, // Tries to pick closest targets first (blocks on grids, projectiles, etc...).
                 IgnoreDumbProjectiles = true, // Don't fire at non-smart projectiles.
                 LockedSmartOnly = false, // Only fire at smart projectiles that are locked on to parent grid.
                 MinimumDiameter = 0, // Minimum radius of threat to engage.
                 MaximumDiameter = 0, // Maximum radius of threat to engage; 0 = unlimited.
-                MaxTargetDistance = 0, // Maximum distance at which targets will be automatically shot at; 0 = unlimited.
-                MinTargetDistance = 50, // Minimum distance at which targets will be automatically shot at.
-                TopTargets = 14, // Maximum number of targets to randomize between; 0 = unlimited.
-                CycleTargets = 2, // Number of targets to "cycle" per acquire attempt.
+                MaxTargetDistance = 4500, // Maximum distance at which targets will be automatically shot at; 0 = unlimited.
+                MinTargetDistance = 0, // Minimum distance at which targets will be automatically shot at.
+                TopTargets = 24, // Maximum number of targets to randomize between; 0 = unlimited.
+                CycleTargets = 4, // Number of targets to "cycle" per acquire attempt.
                 TopBlocks = 18, // Maximum number of blocks to randomize between; 0 = unlimited.
-                CycleBlocks = 8, // Number of blocks to "cycle" per acquire attempt.
+                CycleBlocks = 1, // Number of blocks to "cycle" per acquire attempt.
                 StopTrackingSpeed = 0, // do not track target threats traveling faster than this speed
-                MaxTrackingTime = 35, // After this time has been reached the weapon will stop tracking existing target and scan for a new one, only applies to turreted weapons
+                MaxTrackingTime = 120, // After this time has been reached the weapon will stop tracking existing target and scan for a new one, only applies to turreted weapons
             },
             HardPoint = new HardPointDef
             {
@@ -986,7 +986,7 @@ namespace Scripts {
                     SkipBarrels = 0, // Number of muzzles to skip after each fire event.
                     ReloadTime = 90, // Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     MagsToLoad = 1, // Number of physical magazines to consume on reload.
-                    DelayUntilFire = 10, // How long the weapon waits before shooting after being told to fire. Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
+                    DelayUntilFire = 1, // How long the weapon waits before shooting after being told to fire. Measured in game ticks (6 = 100ms, 60 = 1 seconds, etc..).
                     HeatPerShot = 1, // Heat generated per shot.
                     MaxHeat = 400, // Max heat before weapon enters cooldown (70% of max heat).
                     Cooldown = .8f, // Percentage of max heat to be under to start firing again after overheat; accepts 0 - 0.95
@@ -1308,18 +1308,18 @@ namespace Scripts {
                     Thrust, Utility, Offense, Power, Production, Any, // Subsystem targeting priority: Offense, Utility, Power, Production, Thrust, Jumping, Steering, Any
                 },
                 ClosestFirst = true, // Tries to pick closest targets first (blocks on grids, projectiles, etc...).
-                IgnoreDumbProjectiles = false, // Don't fire at non-smart projectiles.
+                IgnoreDumbProjectiles = true, // Don't fire at non-smart projectiles.
                 LockedSmartOnly = false, // Only fire at smart projectiles that are locked on to parent grid.
                 MinimumDiameter = 0, // Minimum radius of threat to engage.
                 MaximumDiameter = 0, // Maximum radius of threat to engage; 0 = unlimited.
                 MaxTargetDistance = 900, // Maximum distance at which targets will be automatically shot at; 0 = unlimited.
-                MinTargetDistance = 5, // Minimum distance at which targets will be automatically shot at.
-                TopTargets = 14, // Maximum number of targets to randomize between; 0 = unlimited.
-                CycleTargets = 2, // Number of targets to "cycle" per acquire attempt.
-                TopBlocks = 18, // Maximum number of blocks to randomize between; 0 = unlimited.
-                CycleBlocks = 8, // Number of blocks to "cycle" per acquire attempt.
+                MinTargetDistance = 0, // Minimum distance at which targets will be automatically shot at.
+                TopTargets = 24, // Maximum number of targets to randomize between; 0 = unlimited.
+                CycleTargets = 4, // Number of targets to "cycle" per acquire attempt.
+                TopBlocks = 24, // Maximum number of blocks to randomize between; 0 = unlimited.
+                CycleBlocks = 2, // Number of blocks to "cycle" per acquire attempt.
                 StopTrackingSpeed = 0, // do not track target threats traveling faster than this speed
-                MaxTrackingTime = 35, // After this time has been reached the weapon will stop tracking existing target and scan for a new one, only applies to turreted weapons
+                MaxTrackingTime = 65, // After this time has been reached the weapon will stop tracking existing target and scan for a new one, only applies to turreted weapons
             },
             HardPoint = new HardPointDef
             {
