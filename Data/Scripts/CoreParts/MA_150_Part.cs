@@ -432,7 +432,7 @@ namespace Scripts {
                         MuzzlePartId = "cbarrel", // The subpart where your muzzle empties are located.
                         AzimuthPartId = "caz",
                         ElevationPartId = "cgimbal",
-                        DurabilityMod = 0.2f, // GeneralDamageMultiplier, 0.25f = 400% resistance.
+                        DurabilityMod = 0.25f, // GeneralDamageMultiplier, 0.25f = 400% resistance.
                         IconName = "filter_MA_150mm.dds"
                     },
                
