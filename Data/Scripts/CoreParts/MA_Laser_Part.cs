@@ -1751,10 +1751,10 @@ namespace Scripts {
                 {
                     RotateRate = 0.2f, // Max traversal speed of azimuth subpart in radians per tick (0.1 is approximately 360 degrees per second).
                     ElevateRate = 0.2f, // Max traversal speed of elevation subpart in radians per tick.
-                    MinAzimuth = -3,
-                    MaxAzimuth = 3,
-                    MinElevation = -3,
-                    MaxElevation = 3,
+                    MinAzimuth = -5,
+                    MaxAzimuth = 5,
+                    MinElevation = -5,
+                    MaxElevation = 5,
                     HomeAzimuth = 0, // Default resting rotation angle
                     HomeElevation = 0, // Default resting elevation
                     InventorySize = 0.658f, // Inventory capacity in kL.
