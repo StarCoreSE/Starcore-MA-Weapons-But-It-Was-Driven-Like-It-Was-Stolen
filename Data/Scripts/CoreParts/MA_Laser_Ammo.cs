@@ -3330,12 +3330,12 @@ namespace Scripts
                 {
                     Armor = -1f,
                     Light = 0.8f,
-                    Heavy = 0.4f,
+                    Heavy = 0.45f,
                     NonArmor = -1f,
                 },
                 Shields = new ShieldDef
                 {
-                    Modifier = 2f, // Multiplier for damage against shields.
+                    Modifier = 2.5f, // Multiplier for damage against shields.
                     Type = Default, // Damage vs healing against shields; Default, Heal
                     BypassModifier = -1f, // If greater than zero, the percentage of damage that will penetrate the shield.
                 },
