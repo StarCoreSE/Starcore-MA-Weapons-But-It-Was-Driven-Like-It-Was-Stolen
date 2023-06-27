@@ -92,7 +92,7 @@ namespace Scripts {
                 CycleTargets = 2, // Number of targets to "cycle" per acquire attempt.
                 TopBlocks = 8, // Maximum number of blocks to randomize between; 0 = unlimited.
                 CycleBlocks = 8, // Number of blocks to "cycle" per acquire attempt.
-                MaxTrackingTime = 36, // After this time has been reached the weapon will stop tracking existing target and scan for a new one
+                MaxTrackingTime = 240, // After this time has been reached the weapon will stop tracking existing target and scan for a new one
                 StopTrackingSpeed = 0, // Do not track threats traveling faster than this speed; 0 = unlimited.
             },
             HardPoint = new HardPointDef
