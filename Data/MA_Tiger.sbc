@@ -22,7 +22,7 @@ Commissioned by T1g3rs65.</Description>
 	<BlockTopology>TriangleMesh</BlockTopology>
 	<Size x="1" y="1" z="4" />
 	<Center x="0" y="0" z="2" />
-	<ModelOffset x="0" y="0" z="0" />
+	<ModelOffset x="0" y="0" z="0.1" />
 	<Model>Models\MA_Tiger\MA_Tiger.mwm</Model>
 	<MountPoints>
 		<MountPoint Side="Bottom" StartX="0.00" StartY="2.00" EndX="1.00" EndY="3.00" />
@@ -141,7 +141,7 @@ Durability and stats are the same.</Description>
 	<BlockTopology>TriangleMesh</BlockTopology>
 	<Size x="1" y="1" z="4" />
 	<Center x="0" y="0" z="3" />
-	<ModelOffset x="0" y="0" z="0" />
+	<ModelOffset x="0" y="0" z="0.1" />
 	<Model>Models\MA_Tiger\MA_Crouching_Tiger.mwm</Model>
 			<MountPoints>
 				<MountPoint Side="Back" StartX="0.00" StartY="0.00" EndX="1.00" EndY="1.00"/>
