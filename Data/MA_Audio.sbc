@@ -8,7 +8,7 @@
 			</Id>
 			<Category>SHOT</Category>
 			<MaxDistance>1000</MaxDistance>
-			<Volume>1.5</Volume>
+			<Volume>0.5</Volume>
 			<PitchVariation>100</PitchVariation>
 			<PreventSynchronization>1</PreventSynchronization>
 			<SoundLimit>15</SoundLimit>
@@ -29,7 +29,7 @@
 			</Id>
 			<Category>SHOT</Category>
 			<MaxDistance>3000</MaxDistance>
-			<Volume>2</Volume>
+			<Volume>1.0</Volume>
 			<PitchVariation>100</PitchVariation>
 			<PreventSynchronization>0</PreventSynchronization>
 			<SoundLimit>15</SoundLimit>
