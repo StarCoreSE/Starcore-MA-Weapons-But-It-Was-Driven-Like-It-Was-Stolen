@@ -451,8 +451,8 @@ namespace Scripts
             AmmoRound = "MA_Missile_Stage2", // Name of ammo in terminal, should be different for each ammo type used by the same weapon.
             HybridRound = false, // Use both a physical ammo magazine and energy per shot.
             EnergyCost = 1f, // Scaler for energy per shot (EnergyCost * BaseDamage * (RateOfFire / 3600) * BarrelsPerShot * TrajectilesPerBarrel). Uses EffectStrength instead of BaseDamage if EWAR.
-            BaseDamage = 500f, //500 Direct damage; one steel plate is worth 100.
-            Mass = 77f, // In kilograms; how much force the impact will apply to the target.
+            BaseDamage = 16500f, //500 Direct damage; one steel plate is worth 100.
+            Mass = 100f, // In kilograms; how much force the impact will apply to the target.
             Health = 1, // How much damage the projectile can take from other projectiles (base of 1 per hit) before dying; 0 disables this and makes the projectile untargetable.
             BackKickForce = 0f, // Recoil.
             DecayPerShot = 0f, // Damage to the firing weapon itself.
@@ -578,12 +578,12 @@ namespace Scripts
             {
                 ByBlockHit = new ByBlockHitDef
                 {
-                    Enable = false,
-                    Radius = 0, // Meters
-                    Damage = 0,
-                    Depth = 0f, // Meters
-                    MaxAbsorb = 0f,
-                    Falloff = Curve, //.NoFalloff applies the same damage to all blocks in radius
+                    Enable = true,
+                    Radius = 4, // Meters
+                    Damage = 6000,
+                    Depth = 3f, // Meters
+                    MaxAbsorb = 1000f,
+                    Falloff = Pooled, //.NoFalloff applies the same damage to all blocks in radius
                     //.Linear drops evenly by distance from center out to max radius
                     //.Curve drops off damage sharply as it approaches the max radius
                     //.InvCurve drops off sharply from the middle and tapers to max radius
@@ -593,10 +593,10 @@ namespace Scripts
                 },
                 EndOfLife = new EndOfLifeDef
                 {
-                    Enable = true,
-                    Radius = 5f, // Meters
+                    Enable = false,
+                    Radius = 0f, // Meters
                     Damage = 40000f,
-                    Depth = 2f,
+                    Depth = 0f,
                     MaxAbsorb = 2500f,
                     Falloff = Pooled, //.NoFalloff applies the same damage to all blocks in radius
                     //.Linear drops evenly by distance from center out to max radius
