@@ -37,18 +37,32 @@ Made by AutoMcD Astronautical.</Description>
 			</MountPoints>
             <UseModelIntersection>true</UseModelIntersection>
             <Components>
-                <Component Subtype="SteelPlate" Count="1000" />
-				<Component Subtype="Construction" Count="1250" />
 
+				<Component Subtype="Construction" Count="1250" />
+				<Component Subtype="GravityGenerator" Count="300" />
 				<Component Subtype="Superconductor" Count="1200" />
+				<Component Subtype="Computer" Count="12" />
 				<Component Subtype="InteriorPlate" Count="200" />
 				<Component Subtype="SmallTube" Count="80" />
+				<Component Subtype="LargeTube" Count="20" />
+				<Component Subtype="BulletproofGlass" Count="250" />
+				<Component Subtype="Construction" Count="300" />
+				<Component Subtype="MetalGrid" Count="1500" />
+				<Component Subtype="SteelPlate" Count="1000" />
+
+		<!-- 
+                <Component Subtype="SteelPlate" Count="1000" />
+		<Component Subtype="Construction" Count="1250" />
+		<Component Subtype="Superconductor" Count="1200" />
+		<Component Subtype="InteriorPlate" Count="200" />
+		<Component Subtype="SmallTube" Count="80" />
                 <Component Subtype="LargeTube" Count="20" />
-				<Component Subtype="Computer" Count="12" />
-				<Component Subtype="BulletproofGlass" Count="250" /> 
+		<Component Subtype="Computer" Count="12" />
+		<Component Subtype="BulletproofGlass" Count="250" /> 
                 <Component Subtype="Construction" Count="300" />
                 <Component Subtype="MetalGrid" Count="1500" />
-				<Component Subtype="SteelPlate" Count="1500" />
+		<Component Subtype="SteelPlate" Count="1500" />-->
+
             </Components>
             <CriticalComponent Subtype="Computer" Index="0" />
             <BuildProgressModels>
